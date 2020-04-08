@@ -53,7 +53,7 @@ class TriviaTestCase(unittest.TestCase):
 
         self.assertEqual(res.status_code, 404)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'resource not found')
+        self.assertEqual(data['message'], 'Resource Not Found')
 
     def test_get_categories(self):
         res = self.client().get('/categories')
@@ -78,7 +78,7 @@ class TriviaTestCase(unittest.TestCase):
 
         self.assertEqual(res.status_code, 404)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'resource not found')
+        self.assertEqual(data['message'], 'Resource Not Found')
 
     def test_add_question(self):
         res = self.client().post('/questions', json=self.new_question)
@@ -103,7 +103,7 @@ class TriviaTestCase(unittest.TestCase):
 
         self.assertEqual(res.status_code, 422)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'unprocessable')
+        self.assertEqual(data['message'], 'Not Processable')
 
     def test_search_question(self):
         res = self.client().post('/questions', json={'searchTerm': 'question'})
@@ -133,7 +133,7 @@ class TriviaTestCase(unittest.TestCase):
 
         self.assertEqual(res.status_code, 422)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], 'unprocessable')
+        self.assertEqual(data['message'], 'Not Processable')
 
 
 # Make the tests conveniently executable
