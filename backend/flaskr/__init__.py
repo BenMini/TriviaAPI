@@ -136,6 +136,7 @@ def create_app(test_config=None):
 
     @app.route('/categories/<int:cat_id>/questions', methods=['GET'])
     def get_questions_by_category(cat_id):
+        cat_id = cat_id + 1
         category = Category.query.filter(
             Category.id == cat_id).first()
 
